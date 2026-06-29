@@ -1,12 +1,32 @@
-### helm chart 깃허브 push
+## helm chart에 관한 기본정보
+```bash
+templates: helm이 해석할 예정인 미완성의 yaml 파일을 작성하는 폴더(go lang 해석)
+Chart.yaml: helm chart의 기본 정보 명시하는 파일
+values.yaml: chart에 동적으로 전달할 정보를 명시하는 파일(변수)
+```
+
+
+## 나만의 helm chart를 만들고 github pages 배포해보자
+<img src="./assets/image01.png">
+
+### templates yaml 파일 작성법
+
+<img src="./assets/image02.png">
+
+### 작성한 chart 가 잘 실행되는지 확인해 보자
+
+<img src="./assets/image03.png">
+
+### 작성한 helm chart 소스 코드를 일단 github 에 push 한다
 ```bash
 git init
 git add .
 git commit -m "helm01_member 추가함"
+git remote add origin git@github.com:yimjongwon/my-helm-chart.git
 git push -u origin master
 ```
 
-## 나만의 helm chart를 만들고 github pages 배포해보자
+
 ### docs 폴더를 구성한다
 ```bash
 
@@ -21,10 +41,13 @@ helm repo index docs/ --url https://yimjongwon.github.io/my-helm-chart/
 
 git add ./docs
 git commit -m "release: member-app chart v1.0.0 package"
-git push
+git push origin master
 ```
 
-### push 후에 github에 pages에 관련된 설정
+### push 후에 github 에  pages 에 관련된 설정을 1번만 해주면 다음부터는 자동으로 pages 에 반영된다.
+
+<img src="./assets/image04.png">
+<img src="./assets/image05.png">
 
 
 ### 우리가 만든 helm chart 저장소를 사용해보기
