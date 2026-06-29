@@ -1,8 +1,10 @@
 ### helm chart 깃허브 push
+```bash
 git init
 git add .
 git commit -m "helm01_member 추가함"
 git push -u origin master
+```
 
 ## 나만의 helm chart를 만들고 github pages 배포해보자
 ### docs 폴더를 구성한다
