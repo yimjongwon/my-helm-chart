@@ -1,6 +1,6 @@
 apiVersion: v2
-name: member-app
-description: fastapi member application
+name: market-app
+description: Market Application Helm Chart for Kubernetes
 type: application
-version: 0.1.1      # helm chart 자체 버전(따옴표 감싸지 않는다)
-appVersion: "1.0.1" # chart 로 배포하는 app 버전
+version: 0.1.0        # chart 자체 버전
+appVersion: "1.0.0"   # 배포한 app 버전

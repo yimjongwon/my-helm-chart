@@ -1,4 +1,3 @@
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -21,8 +20,10 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
         - containerPort: {{ .Values.containerPort }}
-        env:
-        - name: WRITABLE_URL
-          value: {{ .Values.database.writableUrl | quote }}
-        - name: READONLY_URL
-          value: {{ .Values.database.readonlyUrl | quote }}
+        resources:
+          limits:
+            cpu: {{ .Values.resources.limits.cpu | quote }}
+            memory: {{ .Values.resources.limits.memory | quote }}
+          requests:
+            cpu: {{ .Values.resources.requests.cpu | quote }}
+            memory: {{ .Values.resources.requests.memory | quote }}
